@@ -24,4 +24,8 @@ To run this project:
     service mysql start
     ```
 - Use the Dev Container environment.
+<<<<<<< HEAD
+=======
+- Open the browser and go to: http://localhost:8080/
+>>>>>>> d30b12974015b1daa8fe4f997c3e1023ed8ff412
 Screenshots of the working interface are included in the screenshot folder
