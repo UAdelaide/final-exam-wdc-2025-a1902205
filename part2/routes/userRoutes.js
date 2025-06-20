@@ -74,6 +74,7 @@ router.post('/logout', function (req, res) {
 });
 
 
-// Dog
+// Dog ID
+
 
 module.exports = router;
