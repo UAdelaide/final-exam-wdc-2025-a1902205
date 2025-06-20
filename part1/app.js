@@ -112,8 +112,8 @@ let db;
             ('ownerJane', 'jane@example.com', 'hashed123', 'owner'),
             ('walkerMike', 'ike@example.com', 'hashed456', 'walker')
     `);
-    
 
+    // seperate them into different lines for node to run
    await db.execute(`
         INSERT INTO Dogs (owner_id, name, size)
         VALUES ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium')
