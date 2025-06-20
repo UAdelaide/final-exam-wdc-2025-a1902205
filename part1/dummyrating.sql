@@ -27,3 +27,12 @@ VALUES(
     'accepted'
 );
 
+-- bobwalker walked Milo
+INSERT INTO WalkApplications (request_id, walker_id, status)
+VALUES(
+    (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE
+    name = 'Max') AND requested_time = '2025-06-09 08:00:00'),
+    (SELECT user_id FROM Users WHERE username = 'bobwalker'),
+    'accepted'
+);
+
