@@ -88,7 +88,8 @@
 
         async function loadDogs() {
           try {
-            const res = await fetch('/api/users/mydog');
+            const res = await fetch('/api/users/mydogs');
+            {credentials: 'include' }
             walks.value = await res.json();
           } catch (err) {
             error.value = 'Failed to load walk requests';
