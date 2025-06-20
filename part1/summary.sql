@@ -5,7 +5,7 @@ SELECT
     (
         SELECT COUNT(*)
         FROM WalkRequests WalkRatings
-        JOIN w
+        JOIN WalkApplications wa ON wr.request_id = wa.request_id
     )
 FROM
     Users u
