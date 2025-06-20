@@ -39,6 +39,10 @@
                                   password: this.password
              })
           });
+
+          const result = await res.json();
+          
+
         } catch (err) {
           alert('Login failed'+ err.message)
         }
