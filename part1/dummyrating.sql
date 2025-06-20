@@ -40,6 +40,7 @@ VALUES(
 -- Owners rated walkers
 INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
 VALUES(
-    (SELECT request_id from WalkRequests WHERE dog_id = ())
+    (SELECT request_id from WalkRequests WHERE dog_id = (SELECT dog_id from Dogs w)
+    AND)
 )
 
