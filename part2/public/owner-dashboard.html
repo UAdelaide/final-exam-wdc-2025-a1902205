@@ -94,7 +94,8 @@
             const res = await fetch('/api/users/logout', {
               method: 'POST',
               credentials: 'include'});
-              if (res.redirected)
+              if (res.redirected){
+                window.location.href - }
 
 
             );
