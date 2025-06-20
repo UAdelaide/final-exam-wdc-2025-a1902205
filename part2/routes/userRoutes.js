@@ -75,8 +75,7 @@ router.post('/logout', function (req, res) {
 
 
 // Dog ID
-// Route to Return a list of all dogs with their size and owner's username.
-app.get('/api/dogs', async (req, res) => {
+router.get('/mydogs', async (req, res) => {
   try {
     const [rows] = await db.execute(`
         SELECT
