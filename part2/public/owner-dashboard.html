@@ -92,7 +92,7 @@
             {credentials: 'include'}
             myDogs.value = await res.json();
           } catch (err) {
-            error.value = 'Failed to load my';
+            error.value = 'Failed to load my dogs';
           }
         }
 
@@ -146,6 +146,7 @@
         }
 
         onMounted(() => {
+          loadDogs();
           loadWalks();
         });
 
