@@ -135,7 +135,7 @@ let db;
     `);
 
     // Insert dummy data for question 8 to use
-    // ohterwise will get null for total_ratings, average_rating
+    // ohterwise will get all null for total_ratings, average_rating, completed_walks
 
 //     // Insert data if table is empty
 //     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
