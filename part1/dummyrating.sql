@@ -18,4 +18,7 @@ VALUES
 
 
 -- Assign walkers
-INSERT INTO WalkApplications (re)
+INSERT INTO WalkApplications (request_id, walker_id, status)
+VALUES(
+    s
+)
