@@ -38,5 +38,5 @@ VALUES(
 
 
 -- Owners rated walkers
-INSERT INTO walk
+INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, co)
 
