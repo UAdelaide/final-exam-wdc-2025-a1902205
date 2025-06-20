@@ -4,7 +4,7 @@ SELECT
     AVG(r.rating) AS average_rating,
     (
         SELECT COUNT(*)
-        FROM WalkRequests WalkRatings
+        FROM WalkRequests wr
         JOIN WalkApplications wa ON wr.request_id = wa.request_id
         WHERE wr.status = 'completed'
             AND wa.walker_id = u.user_id
