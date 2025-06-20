@@ -43,22 +43,22 @@ let db;
     //   )
     // `);
 
-    // Insert data if table is empty
-    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
-    if (rows[0].count === 0) {
-      await db.execute(`
-        INSERT INTO books (title, author) VALUES
-        ('1984', 'George Orwell'),
-        ('To Kill a Mockingbird', 'Harper Lee'),
-        ('Brave New World', 'Aldous Huxley')
-      `);
-    }
-  } catch (err) {
+//     // Insert data if table is empty
+//     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
+//     if (rows[0].count === 0) {
+//       await db.execute(`
+//         INSERT INTO books (title, author) VALUES
+//         ('1984', 'George Orwell'),
+//         ('To Kill a Mockingbird', 'Harper Lee'),
+//         ('Brave New World', 'Aldous Huxley')
+//       `);
+//     }
+//   } catch (err) {
 
-    // eslint-disable-next-line no-console
-    console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
-  }
-})();
+//     // eslint-disable-next-line no-console
+//     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
+//   }
+// })();
 
 // Route to return books as JSON
 app.get('/', async (req, res) => {
