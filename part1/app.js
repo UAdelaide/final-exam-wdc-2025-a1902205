@@ -34,12 +34,7 @@ let db;
       password: '',
       database: 'DogWalkService'
     });
-     } catch (err) {
 
-    // eslint-disable-next-line no-console
-    console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
-  }
-})();
 
     // Create a table if it doesn't exist
     await db.execute(`
@@ -70,15 +65,7 @@ let db;
 //   }
 // })();
 
-// Route to return books as JSON
-// app.get('/', async (req, res) => {
-//   try {
-//     const [books] = await db.execute('SELECT * FROM books');
-//     res.json(books);
-//   } catch (err) {
-//     res.status(500).json({ error: 'Failed to fetch books' });
-//   }
-// });
+
 
 
 // Route to Return a list of all dogs with their size and owner's username.
