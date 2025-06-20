@@ -80,6 +80,8 @@
         const message = ref('');
         const error = ref('');
 
+        async function logout()
+
         async function loadWalks() {
           try {
             const res = await fetch('/api/walks');
