@@ -30,7 +30,7 @@
           const data = await res.json();
           this.dogImage = data.image;
             } catch {
-              dog.image = 'Failed to load Images';
+              this.dogImage = 'Failed to fetch images';
             }
           }
           this.dogs = dogList;
