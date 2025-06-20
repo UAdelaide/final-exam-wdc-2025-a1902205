@@ -92,7 +92,8 @@
       async loadDogsWithImages() {
         try {
           const res = await fetch('/api/dogs');
-          
+          const dogList = await res.json();
+          const
         } catch (err) {
           alert('Failed to load dogs'+ err);
         }
