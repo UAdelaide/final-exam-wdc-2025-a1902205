@@ -102,7 +102,7 @@ let db;
         )
     `);
 
-    // Insert data as described in 
+    // Insert data as described in question 5
     await db.execute(`
         INSERT INTO Users (username, email, password_hash, role)
         VALUES
@@ -133,6 +133,8 @@ let db;
             ((SELECT dog_id FROM Dogs WHERE name = 'Rocky'), '2025-06-10 12:30:00', 45, 'Testplace2', 'accepted');
 
     `);
+
+    // Insert data as described in question 5
 
 //     // Insert data if table is empty
 //     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
