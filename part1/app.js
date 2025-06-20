@@ -137,6 +137,7 @@ let db;
     // Insert dummy data for question 8 to use
     // ohterwise will get all null for total_ratings, average_rating, completed_walks
     // so cannot test whether it's actually working
+    // copied from dummyrating.sql
     await db.execute(`
     `);
 
