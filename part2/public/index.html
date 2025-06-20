@@ -91,6 +91,8 @@
 
       async login() {
         try {
+        } catch (err) {
+          alert('Login failed'+ err.message)
       }
     }).mount('#app');
   </script>
