@@ -17,4 +17,4 @@ VALUES
 );
 
 
--- Assign walkers 
+-- Assign walkers
