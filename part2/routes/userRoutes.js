@@ -67,6 +67,7 @@ router.post('/login', async (req, res) => {
 
 // Logout
 router.post('/logout', function (req, res) {
+  res.clearCookie('name');
   req.session.destroy(() => {
     res.json({ message: 'Logged out' });
   });
