@@ -83,8 +83,7 @@ router.get('/mydogs', async (req, res) => {
             dog_id, name
         FROM
             Dogs
-        WHERE owner_id = ?`
-      );
+        WHERE owner_id = ?`);
     res.json(rows);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch dogs' });
