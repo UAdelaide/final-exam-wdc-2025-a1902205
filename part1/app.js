@@ -294,9 +294,9 @@ app.get('/api/walkrequests/open', async (req, res) => {
 });
 
 
-// Route to Return all open walk requests,
+// Route to Return a summary of each walker with their average rating and number of completed walks.
 // including the dog name, requested time, location, and owner's username.
-app.get('/api/walkrequests/open', async (req, res) => {
+app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [rows] = await db.execute(`
         SELECT
