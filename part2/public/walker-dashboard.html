@@ -62,7 +62,9 @@
           try {
             const res = await fetch('/api/users/logout', {
               method: 'GET',
-              credentials: 'include'});
+              credentials: 'include'
+            });
+            
 
           } catch (err) {
             error.value = 'Failed to get the current user';
