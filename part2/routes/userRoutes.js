@@ -73,4 +73,7 @@ router.post('/logout', function (req, res) {
   });
 });
 
+
+// Dog
+
 module.exports = router;
