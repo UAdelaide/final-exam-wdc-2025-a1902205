@@ -60,12 +60,12 @@
 
         async function getCurrentUser() {
           try {
-            const res = await fetch('/api/users/logout', {
+            const res = await fetch('/api/users/me', {
               method: 'GET',
               credentials: 'include'
             });
             const user = await res.json();
-            return req.session.user;
+            return user;
           } catch (err) {
             error.value = 'Failed to get the current user';
           }
