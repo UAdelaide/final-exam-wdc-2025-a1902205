@@ -144,7 +144,8 @@ let db;
 //     // seperate them into different lines for node to run
 //     await db.execute(`
 //         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
-//         VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open')
+//         VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Max'),
+// '2025-06-10 08:00:00', 30, 'Parklands', 'open')
 //         `);
 //     await db.execute(`
 //         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
@@ -262,7 +263,8 @@ app.get('/api/dogs', async (req, res) => {
 });
 
 
-// Route to Return all open walk requests, including the dog name, requested time, location, and owner's username.
+// Route to Return all open walk requests,
+// including the dog name, requested time, location, and owner's username.
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [rows] = await db.execute(`
