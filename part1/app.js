@@ -116,23 +116,23 @@ let db;
    await db.execute(`
         INSERT INTO Dogs (owner_id, name, size)
         VALUES ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium')
-        `);
-        await db.execute(`
+    `);
+    await db.execute(`
         INSERT INTO Dogs (owner_id, name, size)
         VALUES ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small')
-        `);
-        await db.execute(`
+    `);
+    await db.execute(`
         INSERT INTO Dogs (owner_id, name, size)
         VALUES ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Rocky', 'large')
-        `);
-        await db.execute(`
+    `);
+    await db.execute(`
         INSERT INTO Dogs (owner_id, name, size)
         VALUES ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Lucy', 'small')
-        `);
-        await db.execute(`
+    `);
+    await db.execute(`
         INSERT INTO Dogs (owner_id, name, size)
         VALUES ((SELECT user_id FROM Users WHERE username = 'ownerJane'), 'Milo', 'small')
-        `);
+    `);
     await db.execute(`
         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
         VALUES
