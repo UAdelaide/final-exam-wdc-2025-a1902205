@@ -18,4 +18,4 @@ VALUES
 
 
 -- Assign walkers
-INSERT INTO WalkA
+INSERT INTO WalkApplications (re)
