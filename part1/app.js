@@ -72,7 +72,7 @@ app.get('/', async (req, res) => {
 });
 
 
-// Route to return books as JSON
+// Route to Return a list of all dogs with their size and owner's username.
 app.get('/api/dogs', async (req, res) => {
   try {
     const [books] = await db.execute('SELECT * FROM books');
