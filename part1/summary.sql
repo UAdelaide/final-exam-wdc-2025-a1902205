@@ -8,8 +8,8 @@ SELECT
         JOIN WalkApplications wa ON wr.request_id = wa.request_id
         WHERE wr.status = 'completed'
             AND wa.walker_id = u.user_id
-            AND wa.status = 'acce'
-    )
+            AND wa.status = 'accepted'
+    ) As completed_walks
 FROM
     Users u
 LEFT JOIN
