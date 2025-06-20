@@ -61,7 +61,7 @@
         async function getCurrentUser() {
           try {
             const res = await fetch('/api/users/logout', {
-              method: 'POST',
+              method: 'GET',
               credentials: 'include'});
 
           } catch (err) {
