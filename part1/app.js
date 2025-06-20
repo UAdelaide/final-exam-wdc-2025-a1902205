@@ -58,7 +58,7 @@ let db;
 
 //     // eslint-disable-next-line no-console
 //     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
-    }
+  }}
 })();
 
 // Route to return books as JSON
