@@ -18,3 +18,4 @@ VALUES
 
 
 -- Assign walkers
+INSERT INTO WalkA
