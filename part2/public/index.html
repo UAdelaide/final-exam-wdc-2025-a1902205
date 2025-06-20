@@ -98,7 +98,7 @@
             try{
               const imgRes = await fetch ('https://dog.ceo/api/breeds/image/random');
               const imgData = await imgRes.json();
-              dog.imgge = imgData.message;
+              dog.image = imgData.message;
             } catch {
               dog.image = 'Failed to load Images';
             }
