@@ -32,7 +32,8 @@ app.get('/api/dogs', async (req, res) => {
   try {
     const [rows] = await db.execute(`
         SELECT
-            d.name AS dog_name,
+            d.dog_id,
+            d.name,
             d.size,
             u.username AS owner_username
         FROM
