@@ -43,6 +43,8 @@
           const result = await res.json();
           if (!res.ok) throw new Error(result.error||'Login failed');
 
+          if (result.user.role ==)
+
         } catch (err) {
           alert('Login failed'+ err.message)
         }
