@@ -34,6 +34,7 @@ let db;
       password: '',
       database: 'DogWalkService'
     });
+    
 
     // Create a table if it doesn't exist
     // await db.execute(`
@@ -58,8 +59,8 @@ let db;
 
 //     // eslint-disable-next-line no-console
 //     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
-  }}
-);
+//   }
+// })();
 
 // Route to return books as JSON
 // app.get('/', async (req, res) => {
