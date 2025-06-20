@@ -33,14 +33,11 @@
               this.dogImage = 'Failed to fetch images';
             }
           }
-          this.dogs = dogList;
-        } catch (err) {
-          alert('Failed to load dogs'+ err);
         }
       }
     },
     mounted(){
-      this.loadDogsWithImages();
+      this.fetchDogImages();
     }
     }).mount('#app');
   </script>
