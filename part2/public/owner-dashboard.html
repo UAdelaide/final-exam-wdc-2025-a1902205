@@ -95,7 +95,8 @@
             const res = await fetch('/api/users/logout', {
               method: 'POST',
               credentials: 'include'});
-              const reuslt  = ;
+              const reuslt  = await res.json();
+              if (res.ok_ {}
               }
           } catch (err) {
             error.value = 'Failed to logout';
