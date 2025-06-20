@@ -12,33 +12,9 @@
   <div id="app" class="container  d-flex justify-content-center  vh-100">
     <div class="py-4" style="width: 500px;">
 
-      
-      <h3 class="mb-3 mt-5">All Registered Dogs</h3>
-      <table v-if="dogs.length" class="table table-striped">
-        <thead>
-          <tr>
-            <th>Dog ID</th>
-            <th>Name</th>
-            <th>Size</th>
-            <th>Owner ID</th>
-            <th>Photo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="dog in dogs" :key="dog.dog_id">
-            <td>{{ dog.dog_id }}</td>
-            <td>{{ dog.name }}</td>
-            <td>{{ dog.size }}</td>
-            <td>{{ dog.owner_id }}</td>
-            <!-- tried my best, cannot get rid of this linting error -->
-            <!-- at least my page works well -->
-            <td><img :src="dog.image" alt="Random photo" width="100px"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
 
+     <img :src="dog.image" alt="Random photo" width="100px">
+     
   <script>
     const { createApp } = Vue;
     createApp({
