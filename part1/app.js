@@ -134,7 +134,8 @@ let db;
 
     `);
 
-    // Insert data as described in question 5
+    // Insert dummy data for question 8 to use
+    // ohterwise will get null for total_ratings, average_rating
 
 //     // Insert data if table is empty
 //     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
