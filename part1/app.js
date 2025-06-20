@@ -108,6 +108,7 @@ let db;
     // even I close the service and reopen it
     // if not, please run source insert.sql (for question 5)
     // and source dummyrating.sql (for some rankings for question 8)
+    // or use the backup of my db via dump.sql
 
 //     await db.execute(`
 //         INSERT INTO Users (username, email, password_hash, role)
