@@ -15,7 +15,12 @@
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a> -->
-    <form @submit.p
+    <form @submit.prevent="login">
+      <input type="text" v-model="username" placeholder="Enter your name" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <button type="button" @click="logout" v-if="sessionUser">Logout</button>
   </div>
 
   <script>
