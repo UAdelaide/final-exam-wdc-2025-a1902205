@@ -60,6 +60,9 @@
 
         async function getCurrentUser() {
           try {
+            const res = await fetch('/api/users/logout', {
+              method: 'POST',
+              credentials: 'include'});
 
           } catch (err) {
             error.value = 'Failed to get the current user';
