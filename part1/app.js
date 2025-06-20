@@ -106,7 +106,8 @@ let db;
     // sqlMessage: "Duplicate entry 'alice123' for key 'Users.username'"
     // As far as I tested the data are successfully saved in the db
     // even I close the service and reopen it
-    
+    // if not, please run insert.sql (for question 5)
+    // and dummyrating.sql
 
 //     await db.execute(`
 //         INSERT INTO Users (username, email, password_hash, role)
