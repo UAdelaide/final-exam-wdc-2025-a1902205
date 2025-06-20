@@ -122,7 +122,7 @@
         async function submitWalkRequest() {
           try {
             const res = await fetch('/api/walks', {
-              method: 'GET',
+              method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(form.value)
             });
