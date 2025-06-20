@@ -205,22 +205,27 @@ let db;
 
     await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
-VALUES(
-    (SELECT request_id from WalkRequests WHERE dog_id = (SELECT dog_id from Dogs WHERE
-    name = 'Max') AND requested_time = '2025-06-09 08:00:00'),
-    (SELECT user_id FROM Users WHERE username = 'bobwalker'),
-    (SELECT user_id FROM Users WHERE username = 'alice123'),
-    5,
-    'empty'
-)
+        VALUES(
+            (SELECT request_id from WalkRequests WHERE dog_id = (SELECT dog_id from Dogs WHERE
+            name = 'Max') AND requested_time = '2025-06-09 08:00:00'),
+            (SELECT user_id FROM Users WHERE username = 'bobwalker'),
+            (SELECT user_id FROM Users WHERE username = 'alice123'),
+            5,
+            'empty'
+        )
     `);
 
     await db.execute(`
+        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
+        VALUES(
+            (SELECT request_id from WalkRequests WHERE dog_id = (SELECT dog_id from Dogs WHERE
+            name = 'Milo') AND requested_time = '2025-06-09 09:00:00'),
+            (SELECT user_id FROM Users WHERE username = 'bobwalker'),
+            (SELECT user_id FROM Users WHERE username = 'ownerJane'),
+            4,
+            'empty'
+        )
     `);
-
-
-
-
 
   } catch (err) {
 
