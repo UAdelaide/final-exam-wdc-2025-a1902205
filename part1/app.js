@@ -69,7 +69,7 @@ let db;
 //   } catch (err) {
 //     res.status(500).json({ error: 'Failed to fetch books' });
 //   }
-// });
+});
 
 
 // Route to Return a list of all dogs with their size and owner's username.
