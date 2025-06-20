@@ -102,7 +102,7 @@ let db;
         )
     `);
 
-// Insert data
+    // Insert data
     await db.execute(`
         INSERT INTO Users (username, email, password_hash, role)
         VALUES
@@ -112,6 +112,7 @@ let db;
             ('ownerJane', 'jane@example.com', 'hashed123', 'owner'),
             ('walkerMike', 'ike@example.com', 'hashed456', 'walker')
     `);
+
     await db.execute(`
 
     `);
