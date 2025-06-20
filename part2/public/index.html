@@ -108,6 +108,9 @@
           alert('Failed to load dogs'+ err);
         }
       }
+    },
+    mounted(){
+      this.loadDogsWithImages();
     }
     }).mount('#app');
   </script>
