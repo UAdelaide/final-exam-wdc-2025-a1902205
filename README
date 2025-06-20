@@ -13,3 +13,15 @@ To test your computer setup.
 [{"id":1,"title":"1984","author":"George Orwell"},{"id":2,"title":"To Kill a Mockingbird","author":"Harper Lee"},{"id":3,"title":"Brave New World","author":"Aldous Huxley"}]
 
 8. If this worked, then congratulations you are ready to start the exam.
+
+
+### Suggestion
+To run this project:
+- Stay in the main directory (do not cd into part1 or part2).
+
+- Run:
+    ```bash
+    service mysql start
+    ```
+- Use the Dev Container environment.
+- Open the browser and go to: http://localhost:8080/
