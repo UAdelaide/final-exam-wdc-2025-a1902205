@@ -303,7 +303,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         SELECT
             u.username AS walker_username,
             COUNT(r.rating_id) AS total_ratings,
-            RoundAVG(r.rating) AS average_rating,
+            ROUND(AVG(r.rating) AS average_rating,
             (
                 SELECT COUNT(*)
                 FROM WalkRequests wr
