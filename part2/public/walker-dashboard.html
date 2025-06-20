@@ -55,6 +55,20 @@
           }
         }
 
+        async function logout(){
+          try {
+            const res = await fetch('/api/users/logout', {
+              method: 'POST',
+              credentials: 'include'});
+              const reuslt  = await res.json();
+              if (res.ok) {
+                window.location.href = '/'
+              }
+          } catch (err) {
+            error.value = 'Failed to logout';
+          }
+        }
+
         async function applyToWalk(requestId) {
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
