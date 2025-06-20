@@ -170,7 +170,18 @@ let db;
             'Testplace1',
             'completed'
         )
-        `);
+    `);
+
+    await db.execute(`
+        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+        VALUES (
+            (SELECT dog_id FROM Dogs WHERE name = 'Max'),
+            '2025-06-09 08:00:00',
+            30,
+            'Testplace1',
+            'completed'
+        )
+    `);
 
   } catch (err) {
 
