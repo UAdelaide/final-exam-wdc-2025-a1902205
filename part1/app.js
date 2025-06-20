@@ -54,7 +54,8 @@ let db;
       `);
     }
   } catch (err) {
-    
+
+    // eslint-disable-next-line no-console
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
 })();
