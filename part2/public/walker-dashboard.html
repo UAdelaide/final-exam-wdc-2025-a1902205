@@ -65,7 +65,7 @@
               credentials: 'include'
             });
             const user = await res.json();
-            return user;
+            return req.session.user;
           } catch (err) {
             error.value = 'Failed to get the current user';
           }
