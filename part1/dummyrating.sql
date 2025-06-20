@@ -20,5 +20,6 @@ VALUES
 -- Assign walkers
 INSERT INTO WalkApplications (request_id, walker_id, status)
 VALUES(
-    SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Max')
+    (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE
+    name = 'Max') AND
 )
