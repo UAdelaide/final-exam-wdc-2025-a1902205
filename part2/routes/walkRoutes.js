@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
     `);
     res.json(rows);
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('SQL Error:', error);
     res.status(500).json({ error: 'Failed to fetch walk requests' });
   }
@@ -21,7 +22,8 @@ router.get('/', async (req, res) => {
 
 // POST a new walk request (from owner)
 router.post('/', async (req, res) => {
-  const { dog_id, requested_time, duration_minutes, location } = req.body;
+  const
+   dog_id, requested_time, duration_minutes, location } = req.body;
 
   try {
     const [result] = await db.query(`
