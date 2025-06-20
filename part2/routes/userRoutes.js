@@ -40,7 +40,7 @@ router.get('/me', (req, res) => {
 
 // POST login (dummy version)
 // eslint-disable-next-line consistent-return
-// change email to username
+// change email to username for the requirements
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
