@@ -103,129 +103,130 @@ let db;
     `);
 
     // Insert data as described in question 5
-    await db.execute(`
-        INSERT INTO Users (username, email, password_hash, role)
-        VALUES
-            ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-            ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-            ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-            ('ownerJane', 'jane@example.com', 'hashed123', 'owner'),
-            ('walkerMike', 'ike@example.com', 'hashed456', 'walker')
-    `);
+    // sqlMessage: "Duplicate entry 'alice123' for key 'Users.username'"
+//     await db.execute(`
+//         INSERT INTO Users (username, email, password_hash, role)
+//         VALUES
+//             ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+//             ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+//             ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+//             ('ownerJane', 'jane@example.com', 'hashed123', 'owner'),
+//             ('walkerMike', 'ike@example.com', 'hashed456', 'walker')
+//     `);
 
-    // seperate them into different lines for node to run
-   await db.execute(`
-        INSERT INTO Dogs (owner_id, name, size)
-        VALUES ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium')
-    `);
-    await db.execute(`
-        INSERT INTO Dogs (owner_id, name, size)
-        VALUES ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small')
-    `);
-    await db.execute(`
-        INSERT INTO Dogs (owner_id, name, size)
-        VALUES ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Rocky', 'large')
-    `);
-    await db.execute(`
-        INSERT INTO Dogs (owner_id, name, size)
-        VALUES ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Lucy', 'small')
-    `);
-    await db.execute(`
-        INSERT INTO Dogs (owner_id, name, size)
-        VALUES ((SELECT user_id FROM Users WHERE username = 'ownerJane'), 'Milo', 'small')
-    `);
+//     // seperate them into different lines for node to run
+//    await db.execute(`
+//         INSERT INTO Dogs (owner_id, name, size)
+//         VALUES ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium')
+//     `);
+//     await db.execute(`
+//         INSERT INTO Dogs (owner_id, name, size)
+//         VALUES ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small')
+//     `);
+//     await db.execute(`
+//         INSERT INTO Dogs (owner_id, name, size)
+//         VALUES ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Rocky', 'large')
+//     `);
+//     await db.execute(`
+//         INSERT INTO Dogs (owner_id, name, size)
+//         VALUES ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Lucy', 'small')
+//     `);
+//     await db.execute(`
+//         INSERT INTO Dogs (owner_id, name, size)
+//         VALUES ((SELECT user_id FROM Users WHERE username = 'ownerJane'), 'Milo', 'small')
+//     `);
 
-    // seperate them into different lines for node to run
-    await db.execute(`
-        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
-        VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open')
-        `);
-    await db.execute(`
-        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
-        VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted')
-        `);
-    await db.execute(`
-        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
-        VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Lucy'), '2025-06-10 10:30:00', 45, 'Testplace1', 'open')
-    `);
-    await db.execute(`
-        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
-        VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Milo'), '2025-06-10 11:30:00', 45, 'Testplace2', 'open')
-        `);
-    await db.execute(`
-        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
-        VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Rocky'), '2025-06-10 12:30:00', 45, 'Testplace2', 'accepted')
-    `);
+//     // seperate them into different lines for node to run
+//     await db.execute(`
+//         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+//         VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open')
+//         `);
+//     await db.execute(`
+//         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+//         VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted')
+//         `);
+//     await db.execute(`
+//         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+//         VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Lucy'), '2025-06-10 10:30:00', 45, 'Testplace1', 'open')
+//     `);
+//     await db.execute(`
+//         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+//         VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Milo'), '2025-06-10 11:30:00', 45, 'Testplace2', 'open')
+//         `);
+//     await db.execute(`
+//         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+//         VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Rocky'), '2025-06-10 12:30:00', 45, 'Testplace2', 'accepted')
+//     `);
 
-    // Insert dummy data for question 8 to use
-    // ohterwise will get all null for total_ratings, average_rating, completed_walks
-    // so cannot test whether it's actually working
-    // copied from dummyrating.sql
-    await db.execute(`
-        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
-        VALUES (
-            (SELECT dog_id FROM Dogs WHERE name = 'Max'),
-            '2025-06-09 08:00:00',
-            30,
-            'Testplace1',
-            'completed'
-        )
-    `);
+//     // Insert dummy data for question 8 to use
+//     // ohterwise will get all null for total_ratings, average_rating, completed_walks
+//     // so cannot test whether it's actually working
+//     // copied from dummyrating.sql
+//     await db.execute(`
+//         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+//         VALUES (
+//             (SELECT dog_id FROM Dogs WHERE name = 'Max'),
+//             '2025-06-09 08:00:00',
+//             30,
+//             'Testplace1',
+//             'completed'
+//         )
+//     `);
 
-    await db.execute(`
-        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
-        VALUES (
-           (SELECT dog_id FROM Dogs WHERE name = 'Milo'),
-            '2025-06-09 09:00:00',
-            60,
-            'Testplace2',
-            'completed'
-        )
-    `);
-    // walkers
-    await db.execute(`
-        INSERT INTO WalkApplications (request_id, walker_id, status)
-        VALUES (
-            (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE
-            name = 'Max') AND requested_time = '2025-06-09 08:00:00'),
-            (SELECT user_id FROM Users WHERE username = 'bobwalker'),
-            'accepted'
-        )
-    `);
+//     await db.execute(`
+//         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+//         VALUES (
+//            (SELECT dog_id FROM Dogs WHERE name = 'Milo'),
+//             '2025-06-09 09:00:00',
+//             60,
+//             'Testplace2',
+//             'completed'
+//         )
+//     `);
+//     // walkers
+//     await db.execute(`
+//         INSERT INTO WalkApplications (request_id, walker_id, status)
+//         VALUES (
+//             (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE
+//             name = 'Max') AND requested_time = '2025-06-09 08:00:00'),
+//             (SELECT user_id FROM Users WHERE username = 'bobwalker'),
+//             'accepted'
+//         )
+//     `);
 
-    await db.execute(`
-        INSERT INTO WalkApplications (request_id, walker_id, status)
-        VALUES(
-            (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE
-            name = 'Milo') AND requested_time = '2025-06-09 09:00:00'),
-            (SELECT user_id FROM Users WHERE username = 'bobwalker'),
-            'accepted'
-        )
-    `);
+//     await db.execute(`
+//         INSERT INTO WalkApplications (request_id, walker_id, status)
+//         VALUES(
+//             (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE
+//             name = 'Milo') AND requested_time = '2025-06-09 09:00:00'),
+//             (SELECT user_id FROM Users WHERE username = 'bobwalker'),
+//             'accepted'
+//         )
+//     `);
 
-    await db.execute(`
-        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
-        VALUES(
-            (SELECT request_id from WalkRequests WHERE dog_id = (SELECT dog_id from Dogs WHERE
-            name = 'Max') AND requested_time = '2025-06-09 08:00:00'),
-            (SELECT user_id FROM Users WHERE username = 'bobwalker'),
-            (SELECT user_id FROM Users WHERE username = 'alice123'),
-            5,
-            'empty'
-        )
-    `);
+//     await db.execute(`
+//         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
+//         VALUES(
+//             (SELECT request_id from WalkRequests WHERE dog_id = (SELECT dog_id from Dogs WHERE
+//             name = 'Max') AND requested_time = '2025-06-09 08:00:00'),
+//             (SELECT user_id FROM Users WHERE username = 'bobwalker'),
+//             (SELECT user_id FROM Users WHERE username = 'alice123'),
+//             5,
+//             'empty'
+//         )
+//     `);
 
-    await db.execute(`
-        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
-        VALUES(
-            (SELECT request_id from WalkRequests WHERE dog_id = (SELECT dog_id from Dogs WHERE
-            name = 'Milo') AND requested_time = '2025-06-09 09:00:00'),
-            (SELECT user_id FROM Users WHERE username = 'bobwalker'),
-            (SELECT user_id FROM Users WHERE username = 'ownerJane'),
-            4,
-            'empty'
-        )
-    `);
+//     await db.execute(`
+//         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
+//         VALUES(
+//             (SELECT request_id from WalkRequests WHERE dog_id = (SELECT dog_id from Dogs WHERE
+//             name = 'Milo') AND requested_time = '2025-06-09 09:00:00'),
+//             (SELECT user_id FROM Users WHERE username = 'bobwalker'),
+//             (SELECT user_id FROM Users WHERE username = 'ownerJane'),
+//             4,
+//             'empty'
+//         )
+//     `);
 
   } catch (err) {
 
