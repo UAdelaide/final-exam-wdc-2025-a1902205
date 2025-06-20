@@ -41,7 +41,7 @@
           });
 
           const result = await res.json();
-          if !(!res.ok) throw new Error(result.erro)
+          if (!res.ok) throw new Error(result.error||'Login failed');
 
         } catch (err) {
           alert('Login failed'+ err.message)
