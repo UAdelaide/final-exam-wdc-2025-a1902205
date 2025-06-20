@@ -38,7 +38,7 @@ VALUES(
 
 
 -- Owners rated walkers
--- alice123 (onwer of )
+-- alice123 (onwer of Max)
 INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
 VALUES(
     (SELECT request_id from WalkRequests WHERE dog_id = (SELECT dog_id from Dogs WHERE
@@ -49,12 +49,13 @@ VALUES(
     'empty'
 );
 
+-- ownerJane (onwer of Max)
 INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
 VALUES(
     (SELECT request_id from WalkRequests WHERE dog_id = (SELECT dog_id from Dogs WHERE
-    name = 'Max') AND requested_time = '2025-06-09 08:00:00'),
+    name = 'Milo') AND requested_time = '2025-06-09 08:00:00'),
     (SELECT user_id FROM Users WHERE username = 'bobwalker'),
-    (SELECT user_id FROM Users WHERE username = 'alice123'),
+    (SELECT user_id FROM Users WHERE username = 'ownerJane'),
     5,
     'empty'
 );
