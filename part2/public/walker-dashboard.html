@@ -60,8 +60,9 @@
 
         async function getCurrentUser() {
           try {
-            
-          }
+
+          } catch (err) {
+            error.value = 'Failed to get the current user';
 
         }
 
