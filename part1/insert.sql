@@ -26,7 +26,9 @@ VALUES
 
 -- WalkRequests
 -- Three more walk requests with details from the Part2 sample.
-
+-- A request for Lucy at 2025-06-10 10:30:00 for 45 minutes at Testplace1, with status open.
+-- A request for Milo at 2025-06-10 11:30:00 for 45 minutes at Testplace2, with status open.
+-- A request for Rocky at 2025-06-10 12:30:00 for 45 minutes at Testplace2, with status accepted.
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
 VALUES
     ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
