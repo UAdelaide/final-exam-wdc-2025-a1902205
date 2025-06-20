@@ -262,7 +262,7 @@ app.get('/api/dogs', async (req, res) => {
 });
 
 
-// Route to Return a list of all dogs with their size and owner's username.
+// Route to Return all open walk requests, including the dog name, requested time, location, and owner's username.
 app.get('/api/dogs', async (req, res) => {
   try {
     const [rows] = await db.execute(`
