@@ -30,6 +30,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
+// eslint-disable-next-line consistent-return
 router.get('/me', (req, res) => {
   if (!req.session.user) {
     return res.status(401).json({ error: 'Not logged in' });
@@ -38,6 +39,7 @@ router.get('/me', (req, res) => {
 });
 
 // POST login (dummy version)
+// eslint-disable-next-line consistent-return
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -52,7 +54,7 @@ router.post('/login', async (req, res) => {
     }
 
     // Added for q13
-    req.session.user = row[0];
+    req.session.user = rows[0];
 
     res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
