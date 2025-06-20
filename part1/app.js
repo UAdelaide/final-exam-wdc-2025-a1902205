@@ -23,25 +23,25 @@ let db;
     });
 
     // Create the database if it doesn't exist
-    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
-    await connection.end();
+    // await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
+    // await connection.end();
 
     // Now connect to the created database
     db = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'testdb'
+      database: 'DogWalkService'
     });
 
     // Create a table if it doesn't exist
-    await db.execute(`
-      CREATE TABLE IF NOT EXISTS books (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        title VARCHAR(255),
-        author VARCHAR(255)
-      )
-    `);
+    // await db.execute(`
+    //   CREATE TABLE IF NOT EXISTS books (
+    //     id INT AUTO_INCREMENT PRIMARY KEY,
+    //     title VARCHAR(255),
+    //     author VARCHAR(255)
+    //   )
+    // `);
 
     // Insert data if table is empty
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
