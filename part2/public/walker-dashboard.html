@@ -64,8 +64,8 @@
               method: 'GET',
               credentials: 'include'
             });
-            
-
+            const user = await res.json();
+            return user;
           } catch (err) {
             error.value = 'Failed to get the current user';
 
