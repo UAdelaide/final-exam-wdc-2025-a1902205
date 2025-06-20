@@ -4,7 +4,8 @@ SELECT
     AVG(r.rating) AS average_rating
     (
         SELECT COUNT(*)
-        from
+        FROM WalkRequests WalkRatings
+        JOIN w
     )
 FROM
     Users u
