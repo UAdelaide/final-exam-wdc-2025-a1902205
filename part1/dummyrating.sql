@@ -37,5 +37,6 @@ VALUES(
 );
 
 
--- 
+-- Owners rated walkers
+INSERT INTO walk
 
