@@ -94,7 +94,11 @@
           const res = await fetch('/api/dogs');
           const dogList = await res.json();
 
-          for (let)
+          for (let dog of dogList){
+            try{
+              
+            }
+          }
         } catch (err) {
           alert('Failed to load dogs'+ err);
         }
