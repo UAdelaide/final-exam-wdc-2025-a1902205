@@ -78,7 +78,7 @@ router.post('/logout', function (req, res) {
 router.get('/mydogs', async (req, res) => {
   const user = req.session.user;
   try {
-    const [rows] = await db.execute(`
+    const [rows] = await db.query(`
         SELECT
             dog_id, name
         FROM
