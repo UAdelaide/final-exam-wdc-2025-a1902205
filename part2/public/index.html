@@ -29,7 +29,9 @@
         };
       },
     methods:{
-      async login() => {
+      async login() {
+        try {
+          const res = 
           await fetch('/login', {
             method: 'POST',
             credentials: 'include',
