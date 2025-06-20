@@ -112,6 +112,7 @@ let db;
             ('ownerJane', 'jane@example.com', 'hashed123', 'owner'),
             ('walkerMike', 'ike@example.com', 'hashed456', 'walker')
     `);
+    
 
    await db.execute(`
         INSERT INTO Dogs (owner_id, name, size)
@@ -133,6 +134,8 @@ let db;
         INSERT INTO Dogs (owner_id, name, size)
         VALUES ((SELECT user_id FROM Users WHERE username = 'ownerJane'), 'Milo', 'small')
     `);
+
+
     await db.execute(`
         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
         VALUES
