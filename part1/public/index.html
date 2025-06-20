@@ -24,7 +24,7 @@
         };
       },
     methods:{
-      async loadDogsWithImages() {
+      async fetchDogImages() {
         try {
           const res = await fetch('/api/dogs');
           const dogList = await res.json();
