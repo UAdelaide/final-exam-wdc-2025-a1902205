@@ -50,7 +50,7 @@ router.post('/login', async (req, res) => {
     }
 
     // Added for q13
-    req.session
+    req.session.user = row[]
 
     res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
