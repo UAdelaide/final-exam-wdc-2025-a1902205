@@ -104,6 +104,8 @@ let db;
 
     // Insert data as described in question 5
     // sqlMessage: "Duplicate entry 'alice123' for key 'Users.username'"
+    // i tested the data are successfully saved in the db even i close the service and reopen it, so actually i don't need that db code in app.js
+
 //     await db.execute(`
 //         INSERT INTO Users (username, email, password_hash, role)
 //         VALUES
