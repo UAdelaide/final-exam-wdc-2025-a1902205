@@ -138,6 +138,7 @@ let db;
     // ohterwise will get all null for total_ratings, average_rating, completed_walks
     // so cannot test whether it's actually working
     await db.execute(`
+    `);
 
 
 //     // Insert data if table is empty
