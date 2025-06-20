@@ -44,7 +44,9 @@
             <td>{{ dog.owner_id }}</td>
             <td v-if="dog.image">
               <img :src="dog.image" alt="Random photo" width="100px">
-
+            </td>
+            <td v-else>
+              <em>Loading...</em>
             </td>
           </tr>
         </tbody>
