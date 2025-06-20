@@ -139,8 +139,27 @@ let db;
     // so cannot test whether it's actually working
     // copied from dummyrating.sql
     await db.execute(`
+        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+        VALUES
+        (
+            (SELECT dog_id FROM Dogs WHERE name = 'Max'),
+            '2025-06-09 08:00:00',
+            30,
+            'Testplace1',
+            'completed'
+        ),
+        (
+            (SELECT dog_id FROM Dogs WHERE name = 'Milo'),
+            '2025-06-09 09:00:00',
+            60,
+            'Testplace2',
+            'completed'
+        );
     `);
-
+    await db.execute(`
+    `);
+    await db.execute(`
+    `);
 
 //     // Insert data if table is empty
 //     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
