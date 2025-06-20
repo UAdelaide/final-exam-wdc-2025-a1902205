@@ -6,6 +6,8 @@ SELECT
         SELECT COUNT(*)
         FROM WalkRequests WalkRatings
         JOIN WalkApplications wa ON wr.request_id = wa.request_id
+        WHERE wr.status = 'completed'
+        
     )
 FROM
     Users u
