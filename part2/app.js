@@ -37,7 +37,7 @@ app.get('/api/dogs', async (req, res) => {
             d.size,
             d.owner_id
         FROM
-            Dogs d        `);
+            Dogs d`);
     res.json(rows);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch dogs' });
