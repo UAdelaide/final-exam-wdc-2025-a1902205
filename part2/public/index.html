@@ -35,7 +35,9 @@
             method: 'POST',
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username: username.value })
+            body: JSON.stringify({ username: this.username,
+                                  
+             })
           });
           fetchUser();
         };
